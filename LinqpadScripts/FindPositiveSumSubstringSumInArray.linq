@@ -11,8 +11,8 @@ void Main()
 //	int sum = 20;
 
 	// test3
-	int[] sourceArr = new int[] {999, 5, 7, 11, 2, 4};
-	int sum = 24;
+	int[] sourceArr = new int[] {999, 1, 7, 11, 2, 4};
+	int sum = 1000;
 
 	var listOfNumbers = new Queue<int>();
 	GetSumSubArray(sourceArr, sourceArr.Length - 1, listOfNumbers, 0, sum).Dump();
@@ -21,7 +21,7 @@ void Main()
 bool GetSumSubArray(int[] sourceArr, int startIndex, Queue<int> currArray, int currsum, int sum){
 	if(currsum == sum){
 		currArray.Dump();
-		return true;	
+		return true;
 	}
 	
 	// this means you have fallen off the start
@@ -30,6 +30,9 @@ bool GetSumSubArray(int[] sourceArr, int startIndex, Queue<int> currArray, int c
 	}
 	
 	if((sourceArr[startIndex] + currsum) > sum){
+		if(!currArray.Any()){
+			return GetSumSubArray(sourceArr, startIndex - 1, currArray, currsum, sum);
+		}
 		// then dequeue
 		int endElement = currArray.Dequeue();
 		return GetSumSubArray(sourceArr, startIndex, currArray, currsum - endElement, sum);
