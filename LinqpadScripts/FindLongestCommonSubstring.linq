@@ -3,10 +3,10 @@
 void Main()
 {
 //	FindLongestCommonSubstring("ABABC", "BABCA");
-	FindLongestCommonSubstring("ABABC", "B");
+	FindLongestCommonSubstring("ABABC", "B").Dump();
 	
 	// finding longest palindrome in a string
-	FindLongestCommonSubstring("ABABC", "CBABA");
+	FindLongestCommonSubstring("ABABC", "CBABA").Dump();
 }
 
 string FindLongestCommonSubstring(string string1, string string2){
@@ -24,7 +24,7 @@ string FindLongestCommonSubstring(string string1, string string2){
 			if(lookUpMatrix[i,j] > z){
 				z = lookUpMatrix[i,j];
 				ret = string1.Substring(i - z, z);
-				ret.Dump();
+//				ret.Dump();
 			}
 			
 			// this is for all substring
@@ -39,5 +39,5 @@ string FindLongestCommonSubstring(string string1, string string2){
 	// determine the longest substring
 	lookUpMatrix.Dump();
 	
-	return string.Empty;
+	return ret;
 }
