@@ -7,6 +7,7 @@ void Main()
 	arr = new int[] {10};
 	arr = new int[] {10, 8, 6};
 	arr = new int[] {10, 0, 6};
+	arr = new int[] { 1, 3, 2, 4, 5, 7, 8, 9 };
 	int index = GetMinIndex(arr, 0, arr.Length - 1).Dump();
 	arr[index].Dump("Min Value");
 }
@@ -33,5 +34,5 @@ int GetMinIndex(int[] arr, int start, int end){
 		return GetMinIndex(arr, mid + 1, end);
 	}
 	
-	throw new Exception("Not Possible");
+	throw new Exception("This means there is a maxima in the array");
 }
