@@ -2,7 +2,7 @@
 
 void Main()
 {
-	var inp = new [] {"bat", "1tab", "cat"};
+	var inp = new [] {"bat", "1aab", "baa"};
 	FetchPalindromes(inp).Dump();
 //	IsPalindrome("blackcalb").Dump();
 //	Reverse("blac").Dump();
